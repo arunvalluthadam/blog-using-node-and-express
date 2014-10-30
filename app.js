@@ -41,9 +41,26 @@ var Schema2 = new mongoose.Schema({
 });
 var user2 = mongoose.model('registers', Schema2);
 
+// edit article
+app.get('/user/:id/edit', function(req, res) {
+	user1.find({_id: req.params.id}, function(err, docs) {
+		if(err) res.json(err);
+		else res.render('show', {user: docs[0]});
+});
+
+app.put('/user/:id', function(req, res) {
+	user1.update({
+		_id: req.body.title,
+		content: req.body.content
+	}, function(err) {
+		if(err) res.json(err);
+		else res.redirect('/user/'+req.params.id);
+	});
+});
+
 // view one article
 app.get('/user/:id', function(req, res) {
-	user.find({_id: req.params.id}, function(err, docs) {
+	user1.find({_id: req.params.id}, function(err, docs) {
 		if(err) res.json(err);
 		else res.render('show', {user: docs[0]})
 	});

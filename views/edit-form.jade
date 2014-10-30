@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	h1 Editing Article
+	form(method="POST", action="/user/#{user.id}/edit")
+		input(type="hidden", name="_method", value="PUT")
+		input#order1(type="text", style="width:500px;", name="title", value="#{user._id}")
+		textarea#order2(type="text", style="width:500px;height:400px", name="content", value="#{user.content}")
+		input.btn#order3(type="submit")
