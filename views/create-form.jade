@@ -1,0 +1,6 @@
+extends layout
+block content
+	form(action="/new", method="POST")
+		input#order1(type="text", placeholder="Title", style="width:500px;", name="title")
+		textarea#order2(type="text",placeholder="Body", style="width:500px;height:400px", name="content")
+		input.btn#order3(type="submit")

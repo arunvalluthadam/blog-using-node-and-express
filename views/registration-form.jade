@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	h1#regHeading Registration Form
+	form(action="/doneReg", method="POST")
+		input#reg1(type="text", placeholder="Enter First Name", name="firstname")
+		input#reg2(type="text", placeholder="Enter Last Name",name="lastname")
+		input#reg3(type="text", placeholder="Enter User Name",name="username")
+		input#reg4(type="number", placeholder="Enter Age",name="age")
+		input#reg5(type="email", placeholder="Enter Email Id",name="email")
+		input#reg6(type="password", placeholder="Enter Password",name="password1")
+		input#reg7(type="password", placeholder="Enter Password Again",name="password2")
+		input#reg8(type="submit")
